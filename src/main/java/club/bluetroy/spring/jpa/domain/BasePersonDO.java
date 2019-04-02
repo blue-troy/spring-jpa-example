@@ -1,7 +1,7 @@
 package club.bluetroy.spring.jpa.domain;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
@@ -14,8 +14,8 @@ import javax.persistence.MappedSuperclass;
  * Date: 2019-04-01
  * Time: 14:25
  */
-@Setter
-@Getter
+@Data
+@EqualsAndHashCode(callSuper = true)
 @MappedSuperclass
 public abstract class BasePersonDO extends BaseDO {
     @Column(nullable = false)

@@ -1,8 +1,7 @@
 package club.bluetroy.spring.jpa.domain;
 
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -18,8 +17,7 @@ import java.time.LocalDateTime;
  * Date: 2019-04-01
  * Time: 14:21
  */
-@Getter
-@Setter
+@Data
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 public abstract class BaseDO {
@@ -27,9 +25,9 @@ public abstract class BaseDO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
     @CreatedDate
-    @Column(name = "gmt_create",nullable = false)
+    @Column(name = "gmt_create", nullable = false)
     protected LocalDateTime createTime;
     @LastModifiedDate
-    @Column(name = "gmt_modified",nullable = false)
+    @Column(name = "gmt_modified", nullable = false)
     protected LocalDateTime modifyTime;
 }

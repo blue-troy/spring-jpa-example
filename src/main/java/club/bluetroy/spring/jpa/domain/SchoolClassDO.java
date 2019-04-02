@@ -1,6 +1,7 @@
 package club.bluetroy.spring.jpa.domain;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,6 +18,7 @@ import java.util.List;
  * Time: 14:41
  */
 @Data
+@EqualsAndHashCode(callSuper = true)
 @Entity(name = "school_class")
 public class SchoolClassDO extends BaseDO {
     @Column(nullable = false)
